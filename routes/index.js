@@ -20,9 +20,8 @@ router.post("/register", function(req, res) {
     }
     User.register(newUser, req.body.password, function(err, user){
         if(err){
-            req.flash("error", err.message);
             console.log(err);
-            return res.render("register", {page: 'register'});
+            return res.render("register", {error: err.message, page: 'register'});
         }
         passport.authenticate("local")(req, res, function(){
             req.flash("success", "Welcome to CampFinder, " + req.body.username + "!");
