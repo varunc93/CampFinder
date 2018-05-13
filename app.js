@@ -15,7 +15,7 @@ var commentRoutes = require("./routes/comments"),
 
 mongoose.connect(process.env.DATABASEURL);
 //mongoose.connect("mongodb://localhost/camp_finder");
-mongoose.connect("mongodb://campfinder:campfinder@ds121960.mlab.com:21960/campfinder");
+//mongoose.connect("mongodb://campfinder:campfinder@ds121960.mlab.com:21960/campfinder");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
